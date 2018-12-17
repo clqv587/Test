@@ -22,4 +22,5 @@
        * \<bean id="" class="">  
        * \<bean id="" factory-bean="(工厂beanid)" factory-method="">  
     * 实现factorybean接口的工厂类
-       * \<bean id="" class>
+       * \<bean id="" class>  
+* bean作用域       
