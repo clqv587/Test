@@ -46,4 +46,40 @@
 * bean继承(即使用同样属性)  
     * 先把定义一个bean\<bean id="" abstract="true">  
     * 子类声明父类\<bean parent="">  
-*     
+* 加载db.properties  
+    * 先引入命名空间  
+    * \<context:porperties-placeholder loacltion="classpath:" >  
+    * 让spring还可以继续解析\<context:porperties-placeholder ignore-unresolve="true"> 解决配置了多行porperties-placeholder不能解析问题
+    * **注意和系统引用冲突**  
+* 注入自动注解    
+    * 在spring.xml中,\<context:annotation-config /> 表示解析打上autowried标签的代码  
+    * autowried会先找同类型 再找名字（id和字段名）和resouce一样   
+    * qualifier 通过id注入  
+    * value 注入常量  
+* IoC注解  
+    * 在spring.xml中配置扫描配置了component的类，\<context:component-scan basepackge="">
+    * component 把该类给spring实例化,@component("id"),不写id，默认为类名首字母小写
+    * @server（服务），@contoral（控制器），@respository（dao）和component一样是把该类给spring管理  
+    * @scope 定义bean为单例还是多例  
+    * @postconstruct 贴在初始化方法上 会在构建对象后立即执行此方法  
+    * @predestory 贴在销毁方法上  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
