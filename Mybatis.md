@@ -19,5 +19,7 @@
 * 延迟加载（额外sql）
     * 在mybatis_config.xml中的settings里加\<setting name="lazyloadinge.." value="true" >  
    \<setting name="aggress.." value="false">  
-      \<setting name="lazyload..method" value="clone">  
+      \<setting name="lazyload..method" value="clone">   
+* 获取自动生成的主键  
+\<insert useGeneratedKeys="true" keyProperty/>
 * 缓存待续...
