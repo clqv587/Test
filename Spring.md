@@ -30,8 +30,8 @@
     * scope="session"  针对wen会话，不同的会话，bean不同  
 * bean生命周期  
     * \<bean init-method="" destory-method="">  
-       * 在单例中会帮我们建立对象后初始化和销毁前调用destory-method  
-       * 多例中会初始化但不会在销毁前调用destory-method  
+       * 在单例中会帮我们建立对象后初始化和销毁前调用destory-method  @PostConstruct  
+       * 多例中会初始化但不会在销毁前调用destory-method  @PreDestroy   
        * 销毁前调用建立在applicationcontext对象正常关闭的前提下  
 * di（注入依赖）   
    * 在bean元素中设置\<bean autowired="type/name/custor../defalut/no">  
