@@ -14,7 +14,7 @@
 * 建议使用applicationcontext而不是beanfactory  
     * appcon会在建立对象时就创建好bean工厂中需要的对象而beanfactory不会  
     * 可以在\<bean lazy-init="true">设置为懒加载  
-* IoC bean实例化方式  
+* bean实例化方式  
     * 构造器实例化  
     * 静态工厂方法实例化  
        * \<bean id="" class="" factory-method="">  
