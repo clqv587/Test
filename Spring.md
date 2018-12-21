@@ -42,7 +42,8 @@
        * bean元素中包含porperty子元素,   通过name（要设置的属性），再在porperty中子元素list，set，array的子元素设置value或bean，map中有entry
        中的key，value或key，ref，porperties写子元素value xxx=xxx  
    * 构造器注入  
-       * bean元素包含constructor-arg子元素，通过type,index,name(参数名)确定形参的位置，通过value,ref.在constructor-arg里面写得bean为内部bean  
+       * bean元素包含constructor-arg子元素，通过type,index,name(参数名)确定形参的位置，通过value,ref.  
+       可以在constructor-arg里面写得bean为内部bean，\<bean class="">不用写id  
 * bean继承(即使用同样属性)  
     * 先把定义一个bean\<bean id="" abstract="true">  
     * 子类声明父类\<bean parent="">  
