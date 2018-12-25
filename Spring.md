@@ -64,7 +64,7 @@
     * @scope 定义bean为单例还是多例  
     * @postconstruct 贴在初始化方法上 会在构建对象后立即执行此方法  
     * @predestory 贴在销毁方法上  
-* AOP思想  
+* 动态代理  
     * 原理：创建动态代理对象，增强原来的方法，JDK中proxy，spring中cglib来创建动态代理对象，proxy是  
     实现统一接口，cglib是继承，都是在程序运行时期生成对应的字节码  
     * WHAT + WHERE + WHEN  
@@ -77,13 +77,26 @@
        joinpoint不用在xml中配，但throwable要配\<afterthrowing method="" pointcut-ref="aop的id" throw="">
        * 正常（joinpoint） 
        * around增强（proccedjoinpoint）  
-* 注解开发aop  
+* 注解开发动态代理  
     * aop注解解析器  
        * \<aop:asceptj-autoproxy proxy-trage-class="false(false使用proxy，true使用cglib)"/>  
     * 在增强的方法类上贴 @ascept  
     * 定义一个方法，名字相当于xml中的id，贴上@pointcut("execution表达式")  
     * 在增强方法上贴上@before或@afterreturning...(可以写要传入的参数（joinpoint可以不写）,value="pointcut中的id加上（）")   
     注意实际开发可能先执行finaly再执行afterretruning，所以实际开发around用得多  
+* 对事物进行aop   
+    * 配置事务管理器DataSourceTransactionManager\<bean id="" class=""> <porperties name="datasoruce" ref="druid连接池beanid">  
+    * 配置事务增强配置  
+   \<tx:advice id="" transaction-manager="事务管理器id">  
+           <tx:attributes>  
+              <tx: method   有各种属性 read-onlyxx表示查询>  
+            <tx:attributes/>  
+    <tx:advice>         
+    * 配置aopconfig,<aop:pointcut> <aop:advisor> </aopconfig>  
+    * spring事务主要是三个接口类 datasourcetransaction transactiondefne transactionstatus
+* 注解开发事务  
+       * 在xml中写事务注解扫描器 \<tx:annotation-driven transaction-manager="配置事务管理器的id(默认transactionManager)"/>  
+       * 在要使用事务的server类上贴@transaction,如果某一方法为查询，可以在方法上贴@Tracsaction(read-only=true)  
 
 
 
