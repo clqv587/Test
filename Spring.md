@@ -97,10 +97,15 @@
 * 注解开发事务  
        * 在xml中写事务注解扫描器 \<tx:annotation-driven transaction-manager="配置事务管理器的id(默认transactionManager)"/>  
        * 在要使用事务的server类上贴@transaction,如果某一方法为查询，可以在方法上贴@Tracsaction(read-only=true)  
-
-
-
-
+* 使用java代码来代替xml  
+       * 使用@configuration 贴在类上 来标明当前类为配置类  
+       * 使用@import(xx.class)贴在类上 来标明引入其他的class  
+       * 使用@properties("classpath:")贴在类上, 来引入外部properties配置  
+       * 使用@componentscan贴在类上 来开启扫描IoC注解，会自动扫描当前包和子包  
+       * 使用@bean 贴在方法上，方法返回的类即是被spring管理的bean，需要注入的类对象直接在方法里写形参即可，spring会根据形参的类型来找spring管理的bean来注入  
+       * 测试类里写springjuitconfig（classes=xxx.class） 
+       * 使用@enabletransactionmanager表示开启事务注解扫描，
+       
 
 
 
