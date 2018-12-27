@@ -21,5 +21,11 @@
    \<setting name="aggress.." value="false">  
       \<setting name="lazyload..method" value="clone">   
 * 获取自动生成的主键  
-\<insert useGeneratedKeys="true" keyProperty/>
+\<insert useGeneratedKeys="true" keyProperty/>  
+* 注解开发  
+    * @param注解是在mapper接口中方法传参用的，由于mapper只接受对象或map结构，底层是把参数封装成map，在ognl表达式好提取  
+    * @insert 贴在mapper接口上，用来实现此方法，配合@opinion使用  
+    * @delete @update   
+    * @select 配合@result使用 ，还需定义@results（id="",@result(colum=,property=)）  
+**注意：#和$的区别，#会把值当成预编译中的占位符，会带上单引号。$不会参与预编译**    
 * 缓存待续...
